@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+/* import des varaiables dans le style global*/
+@import "./app/partials/utils/variables";
+@import 'swiper/scss';
+@import 'swiper/scss/free-mode';
+@import 'swiper/scss/effect-coverflow';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import '~animate.css/animate.min.css';
+
+
+@font-face {
+    font-family: $family-normal;
+    src: url('./app/partials/bases/DMSans-Regular.ttf') format("opentype");
+}
+
+@font-face {
+    font-family: $family-italic;
+    src: url('./app/partials/bases/DMSans-Italic.ttf') format("opentype");
+}
+
+@font-face {
+    font-family: $family-medium;
+    src: url('./app/partials/bases/DMSans-Medium.ttf') format("opentype");
+}
+
+@font-face {
+    font-family: $family-bold;
+    src: url('./app/partials/bases/DMSans-Bold.ttf') format("opentype");
+}
+
+
+body{
+    margin: $null;
+    padding: $null;
+    width: $full-percent;
+    background-color: #E0E0E0;
+}
+
+/*/
+    SCROLL BARRE
+/*/
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $whiteTwo;
+    border: 1px solid $whiteTwo;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #00172E;
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00172E;
+}

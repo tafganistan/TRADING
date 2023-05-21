@@ -1,0 +1,106 @@
+@import "../partials/utils/variables";
+.swiper{
+    width: $full-percent;
+    height: $full-vh;
+    @include centered;
+    .swiper-slide{
+        width: $full-percent;
+        height: $full-percent;
+        padding: 0;
+        margin: 0;
+        @include centered;
+        .row {
+            width: $full-percent;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            @include centered;
+            text-align: center;
+            color: $whiteTwo;
+            img {
+                width: 170px;
+                height: 170px;
+                border-radius: $full-percent;
+                padding: 20px;
+                border: 1px solid $whiteTwo;
+                cursor: pointer
+            }
+            h1 {
+                font-size: $size-great;
+                color: $whiteTwo;
+                font-weight: $bold;
+                margin-top: 6vh;
+            }
+            p {
+                font-size: 20px;
+                margin-top: 5vh;
+            }
+            button {
+                background: #008d0d;
+                width: 200px;
+                border-radius: 20px;
+                color: $white;
+                height: 50px;
+                margin-top: 5vh;
+                font-weight: $bold;
+            }
+        }
+    }
+
+    .swiper-slide:nth-child(1) {
+        background-image: linear-gradient(360deg, rgba(51, 102, 153, 3), #336699a2), url("../../assets/images/istook.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .swiper-slide:nth-child(2) {
+        background-image: linear-gradient(360deg, rgba(51, 102, 153, 3), #336699a2), url("../../assets/images/istc.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .swiper-slide:nth-child(3) {
+        background-image: linear-gradient(360deg, rgba(51, 102, 153, 3), #336699a2), url("../../assets/images/istockphoto-1366146199-612x612.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        color: white;
+        height: 60px;
+        width: 60px;
+        background: rgba(24, 24, 24, .1);
+
+        border-radius: 100%;
+
+        &::after, &::after{
+            font-size: 25px!important;
+        }
+    }
+
+    .swiper-button-prev {
+        margin-left: 35px;
+    }
+    .swiper-button-next {
+        margin-right: 35px;
+    }
+}
+
+.swiper-3d .swiper-slide-shadow-left, .swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
+}
+
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 1200PX) -----------------------------------------------------------/*/
+@media screen and (max-width: 1200px) {}
+
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 992PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 992px) {}
+
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 768PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 768px) {}
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 576PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 576px) {}

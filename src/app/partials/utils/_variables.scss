@@ -1,0 +1,49 @@
+/* déclaration des imports */
+@import "../utils/mixins";
+
+/* les couleurs du site */
+$black: #565151;
+
+$principal-gradient: linear-gradient(90deg, #008d0d, #336699);
+
+
+$green: #00172E;
+$green-degraded-one: #00172Eb8;
+$green-degraded-two: #397f60b8;
+
+$blue: #336699;
+$blue-degraded-one: #336699a6;
+
+
+
+$white: #f4f4f4;
+$white-rgb: rgb(244, 244, 244);
+$white-rgba: rgba(255, 255, 255, 0.15);
+
+$whiteTwo: #dcdcdc;
+
+
+/* les dimensions, taille et poids de base */
+$full-percent: 100%;
+$full-vh: 100vh;
+
+$italic: italic;
+$normal: normal;
+$bold: bold;
+
+$null: 0;
+$no-overflow: hidden;
+
+$size-normal: 1rem;
+$size-small: 0.8rem;
+$size-small-lg: 0.7rem;
+$size-middle: 1.6rem;
+$size-middle-lg: 1.3rem;
+$size-great: 3rem;
+
+
+/* les polices d'ecriture */
+$family-normal: 'normal';
+$family-italic: 'italic';
+$family-medium: 'medium';
+$family-bold: 'bold';

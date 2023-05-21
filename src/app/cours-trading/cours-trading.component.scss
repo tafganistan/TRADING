@@ -1,0 +1,400 @@
+@import "../../app/partials/utils/variables";
+
+/* FIXED NAVBAR */
+.navbar-top {
+    background: #336699c9;
+    position: fixed;
+    top: 0;
+    z-index: 40;
+    width: $full-percent;
+    .justify-content-lg-center {
+        img {
+            border: 1px solid $whiteTwo;
+            padding: 5px;
+            border-radius: 100%;
+        }
+        span {
+            color: $whiteTwo;
+            font-weight: $bold;
+            font-size: $size-middle-lg;
+            margin-left: 15px;
+        }
+    }
+
+    .iconMenuPc {
+        color: $whiteTwo;
+    }
+
+    .form-inline {
+        cursor: pointer;
+        a {
+            text-decoration: none;
+            color: $whiteTwo;
+
+            svg {
+                color: $whiteTwo;
+            }
+        }
+    }
+}
+
+/* CONTAINER MENUS */
+.container-menus {
+    z-index: 50;
+    background: linear-gradient(90deg, rgba(0, 23, 46, 9), #00172E7d);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $full-percent;
+    height: $full-vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    display: none;
+    .menu-items {
+        cursor: pointer;
+        width: 350px;
+        padding: 40px;
+        margin-left: 10px;
+        background: rgba(0, 23, 46, .9);
+        border-radius: 5px;
+        .row {
+            width: $full-percent;
+            padding: 0;
+            margin: 0;
+            @include centered;
+            h3 {
+                text-align: center;
+                font-size: $size-great;
+                color: $whiteTwo;
+                margin-bottom: 5vh
+            }
+            .item {
+                @include centered;
+                letter-spacing: 5px;
+                height: 35px;
+                border: 1px solid $whiteTwo;
+                border-radius: 3px;
+                color: $whiteTwo;
+                margin-bottom: 3vh;
+                font-size: 0.7rem;
+                a {
+                    text-decoration: none;
+                    color: $whiteTwo;
+                }
+            }
+            .item-close {
+                border: none;
+                svg {
+                    margin-top: 5vh;
+                }
+            }
+        }
+    }
+}
+
+
+/* CONTAINER SESSION */
+.container-session {
+    z-index: 50;
+    background: linear-gradient(280deg, rgba(0, 23, 46, 9), #00172E7d);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $full-percent;
+    height: $full-vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    display: none;
+    .menu-items {
+        cursor: pointer;
+        width: 350px;
+        padding: 40px;
+        margin-left: 10px;
+        background: rgba(0, 23, 46, .9);
+        border-radius: 5px;
+        .row {
+            width: $full-percent;
+            padding: 0;
+            margin: 0;
+            @include centered;
+            h3 {
+                text-align: center;
+                font-size: $size-great;
+                color: $whiteTwo;
+                margin-bottom: 5vh
+            }
+            .item {
+                @include centered;
+                letter-spacing: 5px;
+                height: 35px;
+                border: 1px solid $whiteTwo;
+                border-radius: 3px;
+                color: $whiteTwo;
+                margin-bottom: 3vh;
+                font-size: 0.7rem;
+                a {
+                    text-decoration: none;
+                    color: $whiteTwo;
+                }
+            }
+            .item-close {
+                border: none;
+                svg {
+                    margin-top: 5vh;
+                }
+            }
+        }
+    }
+    .session-blc {
+        display: block;
+        position: fixed;
+        top: 25vh;
+        right: 0;
+    }
+}
+
+/* COVER CONTAINER */
+.CoverContainer {
+    height: 80vh;
+    margin-top: 10vh;
+    overflow: hidden;
+    .Cover {
+        height: $full-percent;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @include centered;
+        video {
+            width: $full-percent;
+            height: $full-percent;
+
+        }
+    }
+}
+
+// BOUTON ITEMS
+.bouton-items {
+    .textSlide {
+        text-align: center;
+        height: auto;
+        color: $white;
+        line-height: 5vh;
+        margin-top: 3vh;
+        .levelBtn {
+            margin-top: 3vh;
+            margin-right: 10px;
+            background: none;
+            transition: all .3s ease;
+            width: 255px;
+            height: 45px;
+            border-radius: 15px;
+            display: inline-block;
+            padding: 14px 28px 13px 28px;
+            line-height: 1;
+            border: 2px solid $black;
+            font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $black;
+            &:hover {
+                color: $black;
+                background: transparent;
+            }
+        }
+        .following {
+            background: #336699c9;
+            color: $white;
+            border: none;
+            padding-top: 17px;
+            &:hover {
+                background: #336699c9;
+                color: $white;
+            }
+        }
+    }
+}
+
+//
+.container-popup-cours {
+    z-index: 50;
+    background: linear-gradient(190deg, rgba(0, 23, 46, .6), #00172E);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $full-percent;
+    height: $full-vh;
+    @include centered;
+    display: none;
+    .datas-popup {
+        width: 450px;
+        padding: 40px;
+        margin-left: 10px;
+        background: rgba(0, 23, 46, .9);
+        padding-top: 2vh;
+        cursor: pointer;
+        border-radius: 5px;
+        .bi-x-circle {
+            position: absolute;
+            right: -8px;
+            top: -10px;
+        }
+        h3 {
+            margin-bottom: 3vh;
+            margin-top: 1vh;
+            font-family: $family-bold;
+        }
+        .mb-3 {
+            .form-control {
+                background: $white;
+                outline: none !important;
+                &:focus {
+                    outline: none !important;
+                }
+            }
+        }
+    }
+}
+
+/* COURSES BLOC */
+.courses-bloc {
+margin-top: 5vh;
+    .courses-bloc-row {
+        width: 80%;
+        margin-left: 9%;
+        padding: 30px;
+        @include centered;
+        h5 {
+            color: #4A4B4B;
+            margin-bottom: 5vh;
+            text-align: center;
+            .serviceNumberTitile {
+                font-size: 2.5rem;
+                color: #336699;
+                font-weight: bold;
+            }
+        }
+        .col-12 {
+            background: #3366992b;
+            color: $white;
+            color: $black;
+            cursor: pointer;
+            @include centered;
+            font-size: $size-small;
+            padding: 3px;
+            padding-bottom: 0;
+            margin-bottom: 2vh;
+            height: 45px;
+            border-radius: 4px;
+            &:hover {
+                background: #3366995b;
+            }
+
+            .row {
+                width: $full-percent;
+                .col-4:nth-child(1) {
+                    text-align: start;
+                    svg {
+                        margin-top: -3px;
+                        color: #336699;
+                    }
+                }
+                .col-4:nth-child(2) {
+                    text-align: end;
+                }
+                .col-4:nth-child(3) {
+                    text-align: end;
+                }
+            }
+
+        }
+
+    }
+}
+
+.swiper{
+    width: 84%;
+    height: 120px;
+    margin-top: -1vh;
+    .swiper-slide{
+        @include centered;
+            .module-bloc {
+                @include centered;
+                /*background: linear-gradient(to right top, #2c3e50, #1d4455, #074a54, #004f4f, #0b5345);*/
+                background: #336699c9;
+                height: 40px;
+                border-radius: 16px;
+                color: $white;
+                width: 220px;
+                padding: 15px;
+                cursor: pointer;
+                font-weight: normal;
+                letter-spacing: 4px;
+                font-size: 0.7rem;
+                text-align: center;
+            }
+    }
+    .swiper-button-prev, .swiper-button-next {
+        color: $black;
+        background: #f4f4f4d9;
+        height: 35px;
+        width: 35px;
+        border-radius: 100%;
+        &::after, &::after{
+            font-size: 10px!important ;
+        }
+    }
+}
+
+/* COPYRIGHT */
+.copyright-div {
+    height: 40px;
+    margin-top: 30px;
+    .copyText {
+        text-align: center;
+        color: #4A4B4B;
+        font-size: 0.8rem;
+    }
+}
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 1200PX) -----------------------------------------------------------/*/
+@media screen and (max-width: 1200px) {
+    .swiper{
+        width: 90%;
+    }
+
+    /* COURSES BLOC */
+    .courses-bloc {
+        .courses-bloc-row {
+            width: $full-percent;
+            margin-left: 0%;
+        }
+    }
+}
+
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 992PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 992px) {
+
+    /* COURSES BLOC */
+    .courses-bloc {
+        .courses-bloc-row {
+            width: $full-percent;
+            margin-left: 0%;
+            margin: 0;
+        }
+    }
+}
+
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 768PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 768px) {
+
+}
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 576PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 576px) {}

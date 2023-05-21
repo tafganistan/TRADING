@@ -1,0 +1,558 @@
+@import "../../app/partials/utils/variables";
+
+/*TOP COVER*/
+.coverTop-bloc {
+    width: $full-percent;
+    height: $full-vh;
+    padding: $null;
+    margin: $null;
+    color: $whiteTwo;
+    &-row {
+        padding: $null;
+        margin: $null;
+        width: $full-percent;
+        height: $full-vh;
+        background: linear-gradient(90deg, rgba(51, 102, 153, 9), #00172E7d), url("../../assets/images/istockphoto-1335958440-612x612.jpg");
+        background-size: cover;
+        background-position: center;
+        &_content {
+            @include centered;
+            flex-direction: column;
+            cursor: pointer;
+            &--logo {
+                img {
+                    height: 170px;
+                    width: 170px;
+                    border-radius: $full-percent;
+                    border: 1px solid $whiteTwo;
+                    padding: 20px;
+                }
+            }
+
+            &--details {
+                text-align: center;
+                p:first-child {
+                    font-size: $size-great;
+                    margin: 40px 0px;
+                    font-weight: $bold;
+                }
+                p:nth-child(3) {
+                    margin-top: 50px;
+                    font-weight: $bold;
+                }
+            }
+
+            &--mouse {
+                width: 24px;
+                margin: 0 auto;
+                text-align: center;
+                .mouse {
+                    margin-top: 20px;
+                    border: 2px solid $whiteTwo;
+                    width: 30px;
+                    background-color: transparent;
+                    height: 50px;
+                    border-radius: 20px;
+                    .wheel {
+                        width: 3px;
+                        height: 3px;
+                        border: 2px solid $whiteTwo;
+                        background-color: $whiteTwo;
+                        position: relative;
+                        border-radius: 50%;
+                        left: 50%;
+                        margin-left: -2px;
+                        top: 7px;
+                        -webkit-animation: scroll 1s infinite;
+                        animation: scroll 1s infinite;
+                    }
+                }
+            }
+        }
+
+        @-webkit-keyframes scroll {
+            0% {
+                top: 6px;
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                top: 20px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                top: 6px;
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                top: 20px;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+/* CONTAINER MENUS */
+.container-menus {
+    z-index: 50;
+    background: linear-gradient(90deg, rgba(0, 23, 46, 9), #00172E7d);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $full-percent;
+    height: $full-vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    display: none;
+    .menu-items {
+        cursor: pointer;
+        width: 350px;
+        padding: 40px;
+        margin-left: 10px;
+        background: rgba(0, 23, 46, .9);
+        border-radius: 5px;
+        .row {
+            width: $full-percent;
+            padding: 0;
+            margin: 0;
+            @include centered;
+            h3 {
+                text-align: center;
+                font-size: $size-great;
+                color: $whiteTwo;
+                margin-bottom: 5vh
+            }
+            .item {
+                @include centered;
+                letter-spacing: 5px;
+                height: 35px;
+                border: 1px solid $whiteTwo;
+                border-radius: 3px;
+                color: $whiteTwo;
+                margin-bottom: 3vh;
+                font-size: 0.7rem;
+                a {
+                    text-decoration: none;
+                    color: $whiteTwo;
+                }
+            }
+            .item-close {
+                border: none;
+                svg {
+                    margin-top: 5vh;
+                }
+            }
+        }
+    }
+}
+
+
+/* CONTAINER MENUS */
+.container-session {
+    z-index: 50;
+    background: linear-gradient(280deg, rgba(0, 23, 46, 9), #00172E7d);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $full-percent;
+    height: $full-vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    display: none;
+    .menu-items {
+        cursor: pointer;
+        width: 350px;
+        padding: 40px;
+        margin-left: 10px;
+        background: rgba(0, 23, 46, .9);
+        border-radius: 5px;
+        .row {
+            width: $full-percent;
+            padding: 0;
+            margin: 0;
+            @include centered;
+            h3 {
+                text-align: center;
+                font-size: $size-great;
+                color: $whiteTwo;
+                margin-bottom: 5vh
+            }
+            .item {
+                @include centered;
+                letter-spacing: 5px;
+                height: 35px;
+                border: 1px solid $whiteTwo;
+                border-radius: 3px;
+                color: $whiteTwo;
+                margin-bottom: 3vh;
+                font-size: 0.7rem;
+                a {
+                    text-decoration: none;
+                    color: $whiteTwo;
+                }
+            }
+            .item-close {
+                border: none;
+                svg {
+                    margin-top: 5vh;
+                }
+            }
+        }
+    }
+    .session-blc {
+        display: block;
+        position: fixed;
+        top: 25vh;
+        right: 0;
+    }
+}
+
+
+/* DYNAMIC NAVBAR */
+.navbar-top {
+    background: #336699d9;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    .justify-content-lg-center {
+        img {
+            border: 1px solid $whiteTwo;
+            padding: 5px;
+            border-radius: 100%;
+        }
+        span {
+            color: $whiteTwo;
+            font-weight: $bold;
+            font-size: $size-middle-lg;
+            margin-left: 15px;
+        }
+    }
+
+    .iconMenuPc {
+        color: $whiteTwo;
+    }
+
+    .form-inline {
+        cursor: pointer;
+        a {
+            text-decoration: none;
+            color: $whiteTwo;
+        }
+    }
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* BODY BLOC */
+.body-bloc {
+    color: $black;
+
+    &-row {
+        padding-top: 10vh;
+        padding-bottom: 3vh;
+        width: $full-percent;
+        @include centered;
+        .div {
+            text-align: center;
+        }
+
+        .serviceBoxContainer {
+            margin: 25px;
+            width: 35%;
+            margin-top: 10vh;
+            .serviceBox {
+                height: 100%;
+                width: 100%;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                padding: 30px 60px 30px 60px;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 5px;
+                &:hover {
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                }
+                h5 {
+                    color: #4A4B4B;
+                    .serviceNumberTitile {
+                        font-size: 2.5rem;
+                        color: #336699;
+                        font-weight: bold;
+                    }
+                }
+
+                .hr-div {
+                    margin-top: 5vh;
+                }
+
+                .text-service {
+                    font-size: $size-normal;
+                    color: #4A4B4B;
+                    margin-top: 25px;
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $black;
+        }
+    }
+}
+
+/* BLOC SEPARATION */
+.SecondariMenuNavBar {
+    background: #336699c9;
+    font-weight: $bold;
+    color: $whiteTwo;
+    height: 70px;
+    margin-top: 2vh;
+    p {
+        font-size: 1.2rem;
+        line-height: 70px;
+        text-align: center;
+    }
+}
+
+/* BODY BLOC 2 */
+.body-bloc--two, .body-bloc--three, .body-bloc--four {
+    background: linear-gradient(90deg, #33669947, #00000000), url("../../assets/images/ASS-juriqAssistante.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    margin-top: 1vh;
+    padding: 0;
+    .row {
+        height: $full-percent;
+        width: $full-percent;
+        padding: 0;
+        margin: 0;
+    }
+}
+.body-bloc--two {
+    .about-traide {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        color: white;
+        background: #00172E7d;
+        height: $full-percent;
+        width: 60%;
+        margin-left: 40%;
+        .conditionBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            h6 {
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+/* BODY BLOC 3 */
+.body-bloc--three {
+    background: none;
+    background-color: linear-gradient(90deg, rgba(0, 23, 46, .9), #00172E7d);
+    .row {
+        .col-md-7 {
+            @include centered;
+            div {
+                width: 500px;
+                h3 {
+                    font-weight: bold;
+                }
+                p:nth-child(2) {
+                    font-size: 18px;
+                    margin-bottom: 30px;
+                }
+                .methodeExample {
+                    font-size: $size-normal;
+                    svg {
+                        margin-right: 25px;
+                    }
+                    .bi-activity {
+                        color: #ff5722;
+                    }
+                    .bi-building-fill-check{
+                        color: #3a8945;
+                    }
+                    .bi-card-checklist {
+                        color:#346c8d;
+                    }
+                }
+            }
+        }
+        .col-md-5 {
+            background: linear-gradient(90deg, #33669947, #00000000), url("../../assets/images/pexels-photo-7173026_1.jpg");
+            background-size: cover;
+            background-position: center;
+            height: $full-percent;
+        }
+    }
+}
+
+/* BODY BLOC 4 */
+.body-bloc--four {
+    background: none;
+    height: 300px;
+    .statContentBox {
+        height: $full-percent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        img {
+            height: 70px;
+            width: 70px;
+            margin-bottom: 2vh;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 50px
+        }
+    }
+    .div-blue {
+        background-color: $blue-degraded-one;
+    }
+
+    .div-green {
+        background-color: $green-degraded-one;
+    }
+}
+
+/* COPYRIGHT */
+.copyright-div {
+    height: 40px;
+    margin-top: 30px;
+    .copyText {
+        text-align: center;
+        color: #4A4B4B;
+        font-size: 0.8rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 1200PX) -----------------------------------------------------------/*/
+@media screen and (max-width: 1200px) {
+
+    /* BODY BLOC */
+    .body-bloc {
+        &-row {
+            .serviceBoxContainer {
+                width: 40%;
+            }
+        }
+    }
+
+}
+
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 992PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 992px) {
+    /* BODY BLOC */
+    .body-bloc {
+        &-row {
+            .serviceBoxContainer {
+                margin: 0px;
+                width: $full-percent;
+                margin-top: 5vh;
+                padding: 0px 100px 0px 100px;
+                .serviceBox {
+                    h5 {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    /* BODY BLOC 2 */
+    .body-bloc--two {
+        .about-traide {
+            width: 80%;
+            margin-left: 20%;
+        }
+    }
+
+}
+
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 768PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 768px) {
+
+    /* BODY BLOC */
+    .body-bloc {
+        padding: 0;
+        &-row {
+            margin: 0;
+            .serviceBoxContainer {
+                margin: 0px;
+                width: $full-percent;
+                margin-top: 5vh;
+                padding: 0px 0px 0px 0px;
+                .serviceBox {
+                    padding: 30px 60px 30px 60px;
+                    h5 {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .body-bloc--two {
+        .about-traide {
+            width: $full-percent;
+            margin-left: 0%;
+        }
+    }
+
+    .SecondariMenuNavBarStat {
+        margin-top: 235px;
+    }
+
+    /* COPYRIGHT */
+    .copyright-div {
+        margin-top: 112vh;
+    }
+}
+
+/*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 576PX) ------------------------------------------------------------/*/
+@media screen and (max-width: 576px) {}
