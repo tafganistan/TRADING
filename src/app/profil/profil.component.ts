@@ -1,4 +1,5 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
+import { TokenStorageService } from '../services/token-storage.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 declare var $: any;
 
@@ -14,7 +15,10 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
 })
 export class ProfilComponent implements OnInit {
 
-  constructor (private router: Router) {}
+  constructor (
+    private router: Router, 
+    private localStorageService: TokenStorageService,
+    ) {}
 
   ngOnInit(): void {
     $(document).ready(function () {
@@ -72,6 +76,11 @@ export class ProfilComponent implements OnInit {
         $(".container-view-row-mes-cours").css("display", "none");
       });
     })
+  }
+
+  signout() {
+    this.localStorageService.signOut()
+    this.router.navigateByUrl('/authentification')
   }
 
 }

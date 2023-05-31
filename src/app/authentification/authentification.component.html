@@ -7,48 +7,84 @@
         <div class="col-lg-6 col-md-12 forms-bloc">
             <div class="row">
                 <!-- CONNEXION BLOC -->
-                <div class="form-block connexion-bloc col-12 animate__animated animate__fadeIn">
-                    <div class="row">
-                        <h2> Heureux de vous revoir </h2>
-                        <p> Entrez vos accès pour vous connecter </p>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Numero de téléphone" aria-label="Username" aria-describedby="basic-addon1">
+                <form [formGroup]="signinForm" (ngSubmit)="submitsigninForm()" class="form-connexion">
+                    <div class="form-block connexion-bloc col-12 animate__animated animate__fadeIn">
+                        <div class="row">
+                            <h2> Heureux de vous revoir </h2>
+                            <p> Entrez vos accès pour vous connecter </p>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Numero de téléphone" aria-label="Username" aria-describedby="basic-addon1"
+                                formControlName="telephone" 
+                                name="telephone" 
+                                minlength="10"
+                                [ngClass]="{ 'is-invalid': submitted_signin && f_signin['telephone'].errors }"
+                                >
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Username" aria-describedby="basic-addon1"
+                                formControlName="password"
+                                name="password"
+                                minlength="6"
+                                [ngClass]="{ 'is-invalid': submitted_signin && f_signin['password'].errors }"
+                                >
+                            </div>
+                            <div class="input-group mb-3">
+                                <!-- <button class="btn btn-auth" routerLink="profil" ou home/ si compte pas actif> Connexion au compte </button> -->
+                                <button class="btn btn-auth"> Connexion au compte </button>
+                            </div>
+    
+                            <p class="p"> Veuillez <span class="btn-creation">Créer Un Compte</span> pour avoir accès aux formations </p>
                         </div>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <button class="btn btn-auth" routerLink="profil"> Connexion au compte </button>
-                        </div>
-
-                        <p class="p"> Veuillez <span class="btn-creation">Créer Un Compte</span> pour avoir accès aux formations </p>
                     </div>
-                </div>
+                </form>
 
                 <!-- INSCRIPTTION BLOC -->
-                <div class="form-block inscription-bloc col-12 animate__animated animate__fadeIn">
-                    <div class="row">
-                        <h2 class="titreInscription"> Bienvenue Tr'aide Learning </h2>
-                        <p> Entrer vos information pour créer un compte </p>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Nom complet" aria-label="Username" aria-describedby="basic-addon1">
+                <form [formGroup]="registerForm" (ngSubmit)="submitregisterForm()">
+                    <div class="form-block inscription-bloc col-12 animate__animated animate__fadeIn">
+                        <div class="row">
+                            <h2 class="titreInscription"> Bienvenue Tr'aide Learning </h2>
+                            <p> Entrer vos information pour créer un compte </p>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Nom complet" aria-label="Username" aria-describedby="basic-addon1"
+                                formControlName="nom_complet" 
+                                name="nom_complet" 
+                                maxlength="50"
+                                [ngClass]="{ 'is-invalid': submitted_register && f_register['nom_complet'].errors }"
+                                >
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Numéro de téléphone" aria-label="Username" aria-describedby="basic-addon1"
+                                formControlName="telephone" 
+                                name="telephone" 
+                                minlength="10"
+                                [ngClass]="{ 'is-invalid': submitted_register && f_register['telephone'].errors }"
+                                >
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Username" aria-describedby="basic-addon1"
+                                formControlName="password" 
+                                name="password" 
+                                minlength="6"
+                                [ngClass]="{ 'is-invalid': submitted_register && f_register['password'].errors }"
+                                >
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Confirmation" aria-label="Username" aria-describedby="basic-addon1"
+                                formControlName="password_confirmation" 
+                                name="password_confirmation" 
+                                minlength="6"
+                                [ngClass]="{ 'is-invalid': submitted_register && f_register['password_confirmation'].errors }"
+                                >
+                            </div>
+                            <div class="input-group mb-3">
+                                <!-- <button class="btn btn-auth" routerLink="/home"> Création de compte </button> -->
+                                <button class="btn btn-auth"> Création de compte </button>
+                            </div>
+    
+                            <p class="p"> Déjà un compte ? <span class="btn-connexion">Connectez vous</span> </p>
                         </div>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Numéro de téléphone" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Confirmation" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <button class="btn btn-auth" routerLink="/home"> Création de compte </button>
-                        </div>
-
-                        <p class="p"> Déjà un compte ? <span class="btn-connexion">Connectez vous</span> </p>
                     </div>
-                </div>
+                </form>         
             </div>
         </div>
     </div>

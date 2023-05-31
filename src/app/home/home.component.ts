@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
+import { TokenStorageService } from '../services/token-storage.service';
 declare var $: any;
 
 @Component({
@@ -7,6 +9,12 @@ declare var $: any;
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  constructor (
+    private router: Router, 
+    private localStorageService: TokenStorageService,
+  ) {}
+
   ngOnInit(): void {
     $(document).ready(function () {
       window.onscroll = function() {myFunction()};
@@ -53,5 +61,10 @@ export class HomeComponent implements OnInit {
         $(".container-session").fadeOut(200);
       });
     })
+  }
+
+  signout() {
+    this.localStorageService.signOut()
+    this.router.navigateByUrl('/authentification')
   }
 }

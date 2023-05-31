@@ -8,13 +8,14 @@ import { AuthentificationComponent } from './authentification/authentification.c
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CoursTradingComponent } from './cours-trading/cours-trading.component';
+import { AuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'home', component: HomeComponent },
   { path: 'formations', component: FormationsComponent},
   { path: 'formations/liste', component: FormationsListComponent },
-  { path: 'profil', component: ProfilComponent },
+  { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent },
   { path: 'authentification', component: AuthentificationComponent },
   { path: 'trading/cours', component: CoursTradingComponent }
