@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-3 div div div-cours">
                             <div class="row">
-                                <h6>2</h6>
+                                <h6>1</h6>
                                 <p> Formations </p>
                             </div>
                         </div>
@@ -45,15 +45,16 @@
                         </div>
                         <div class="col-3 div div-notifs">
                             <div class="row">
-                                <h6>37</h6>
+                                <h6>0</h6>
                                 <p> Notifications </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 container-profil-row_white">
-                    <h3> Paul Jean Philippe Niango </h3>
-                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+                    <h3> {{ profil.nom_complet }} </h3>
+                    <p *ngIf="profil.bio"> {{ profil.bio }} </p>
+                    <p *ngIf="!profil.bio"> Nouvel etudiant en trading sur la plateforme vision-market</p>
                 </div>
                 <div class="col-12 container-profil-row_items">
                     <swiper [slidesPerView]="3" [spaceBetween]="10" [navigation]="true" class="animate__animated animate__fadeIn">
@@ -159,52 +160,86 @@
                 <swiper [slidesPerView]="3" [spaceBetween]="10" [navigation]="true">
                     <ng-template swiperSlide>
                         <div class="col-lg-3 col-md-12 serviceBoxContainer">
-                                <div class="serviceBox">
-                                    <div class="input-group mb-3">
+                            <div class="serviceBox">
+                                <div class="input-group mb-3">
+                                    <form #UpdateFor="ngForm" (ngSubmit)="UpdateUserProfil(UpdateFor)">
                                         <div class="row">
-                                            <input type="text" class="form-control" placeholder="Nom complet" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" class="form-control" placeholder="Nom complet" aria-label="Username" aria-describedby="basic-addon1"
+                                            name="nom_complet"
+                                            [(ngModel)]="nom_complet">
                                             <button class="btn btn-auth"> Modifier </button>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
+                            </div>
                         </div>
                     </ng-template>
                     <ng-template swiperSlide>
                         <div class="col-lg-3 col-md-12 serviceBoxContainer">
-                                <div class="serviceBox">
-                                    <div class="input-group mb-3">
-                                        <div class="row">
-                                            <input type="text" class="form-control" placeholder="Numéro de téléphone" aria-label="Username" aria-describedby="basic-addon1">
-                                            <button class="btn btn-auth"> Modifier </button>
-                                        </div>
+                            <div class="serviceBox">
+                                <div class="input-group mb-3">
+                                    <form #UpdateFor="ngForm" (ngSubmit)="UpdateUserProfil(UpdateFor)">
+                                    <div class="row">
+                                        <input type="text" class="form-control" placeholder="Numéro de téléphone" aria-label="Username" aria-describedby="basic-addon1"
+                                        name="telephone" 
+                                        minlength="10"
+                                        [(ngModel)]="telephone">
+                                        <button class="btn btn-auth"> Modifier </button>
                                     </div>
+                                    </form>
                                 </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <!-- <ng-template swiperSlide>
+                        <div class="col-lg-3 col-md-12 serviceBoxContainer">
+                            <div class="serviceBox">
+                                <div class="input-group mb-3">
+                                    <form  [formGroup]="updateProfil" (ngSubmit)="UpdateUserProfil()">
+                                    <div class="row">
+                                        <input type="text" class="form-control" placeholder="Biographie" aria-label="Username" aria-describedby="basic-addon1"
+                                        formControlName="bio" 
+                                        name="bio">
+                                        <button class="btn btn-auth"> Modifier </button>
+                                    </div>
+                                   </form>
+                                </div>
+                            </div>
                         </div>
                     </ng-template>
                     <ng-template swiperSlide>
                         <div class="col-lg-3 col-md-12 serviceBoxContainer">
-                                <div class="serviceBox">
-                                    <div class="input-group mb-3">
-                                        <div class="row">
-                                            <input type="text" class="form-control" placeholder="Nouveau mot de passe" aria-label="Username" aria-describedby="basic-addon1">
-                                            <button class="btn btn-auth"> Modifier </button>
-                                        </div>
+                            <div class="serviceBox">
+                                <div class="input-group mb-3">
+                                    <form  [formGroup]="updateProfil" (ngSubmit)="UpdateUserProfil()">
+                                    <div class="row">
+                                        <input type="file" class="form-control" placeholder="Photo de profile" aria-label="Username" aria-describedby="basic-addon1"
+                                        formControlName="avatar" 
+                                        name="avatar">
+                                        <button class="btn btn-auth"> Modifier </button>
                                     </div>
+                                    </form>
                                 </div>
+                            </div>
                         </div>
                     </ng-template>
                     <ng-template swiperSlide>
                         <div class="col-lg-3 col-md-12 serviceBoxContainer">
-                                <div class="serviceBox">
-                                    <div class="input-group mb-3">
-                                        <div class="row">
-                                            <input type="text" class="form-control" placeholder="Confirmation" aria-label="Username" aria-describedby="basic-addon1">
-                                            <button class="btn btn-auth"> Modifier </button>
-                                        </div>
+                            <div class="serviceBox">
+                                <div class="input-group mb-3">
+                                    <form  [formGroup]="updateProfil" (ngSubmit)="UpdateUserProfil()">
+                                    <div class="row">
+                                        <input type="text" class="form-control" placeholder="Nouveau mot de passe" aria-label="Username" aria-describedby="basic-addon1"
+                                        formControlName="password" 
+                                        name="password" 
+                                        minlength="10">
+                                        <button class="btn btn-auth"> Modifier </button>
                                     </div>
+                                </form>
                                 </div>
+                            </div>
                         </div>
-                    </ng-template>
+                    </ng-template> -->
                 </swiper>
             </div>
         </div>

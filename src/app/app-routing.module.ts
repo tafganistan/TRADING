@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'formations', component: FormationsComponent},
   { path: 'formations/liste', component: FormationsListComponent },
-  { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard] },
+  { path: 'profil', component: ProfilComponent },
   { path: 'about', component: AboutComponent },
   { path: 'authentification', component: AuthentificationComponent },
   { path: 'trading/cours', component: CoursTradingComponent }

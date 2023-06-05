@@ -146,6 +146,7 @@ export class AuthentificationComponent implements OnInit {
 
             setTimeout(() => {
               this.router.navigateByUrl('/home')
+              // this.router.navigate(['AddEmployee']);
             }, 1000)
 
           } else {

@@ -4,6 +4,11 @@ declare var $: any;
 
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper';
+import { Modele } from '../models/modele';
+import { first } from 'rxjs';
+import { ModuleService } from '../services/module.service';
+import { CoursAll } from '../models/coursAll';
+import { CoursallService } from '../services/coursall.service';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
 
 @Component({
@@ -12,8 +17,22 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
   styleUrls: ['./formations-list.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
+
+
 export class FormationsListComponent implements OnInit {
-  constructor (private router: Router) {}
+  modules: Modele[] = []
+  coursAll: CoursAll[] = []
+  coursModulOrdre:any = ''
+  coursModulTitre:any = ''
+
+  constructor (
+    private router: Router, 
+    private module: ModuleService,
+    private cours: CoursallService,
+    // private localStorageService: TokenStorageService, 
+    
+    ) {}
 
   ngOnInit(): void {
     $(document).ready(function () {
@@ -104,5 +123,37 @@ export class FormationsListComponent implements OnInit {
       });
 
     });
+
+    this.GetModuleForAll()
+    
+    setTimeout(() => {
+    this.GetCoursListForAll(this.modules[0].id, this.modules[0].titre, this.modules[0].ordre)
+    }, 500);
   }
+
+
+  GetModuleForAll() {
+    this.module.getArticleForActualily()
+      .pipe(first())
+        .subscribe((response:any) => {
+          response.forEach((item:Modele) => {
+            this.modules.push(item)
+          }); 
+          console.log(this.modules);  
+        })    
+  }
+
+  GetCoursListForAll(moduleid:any,moduleTitle?:any, moduleOder?:any, ) {
+    this.coursAll = []
+    this.coursModulOrdre = moduleOder
+    this.coursModulTitre = moduleTitle
+    this.cours.getCoursForAll(moduleid)
+      .pipe(first())
+        .subscribe((response:any) => {
+          response.forEach((item:CoursAll) => {
+            this.coursAll.push(item)
+          }); 
+        })    
+  }
+  
 }

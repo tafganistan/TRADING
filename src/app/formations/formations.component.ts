@@ -1,6 +1,9 @@
 import { ActivatedRoute, Router} from '@angular/router';
 import { TokenStorageService } from '../services/token-storage.service';
 import { Component, OnInit } from '@angular/core';
+import { Modele } from '../models/modele';
+import { first } from 'rxjs';
+import { ModuleService } from '../services/module.service';
 declare var $: any;
 
 @Component({
@@ -9,9 +12,14 @@ declare var $: any;
   styleUrls: ['./formations.component.scss']
 })
 export class FormationsComponent implements OnInit {
+
+  modules: Modele[] = []
+
   constructor (
     private router: Router, 
     private localStorageService: TokenStorageService,
+
+    private module: ModuleService, 
     ) {}
 
   ngOnInit(): void {
@@ -43,6 +51,23 @@ export class FormationsComponent implements OnInit {
         $(".container-session").fadeOut(200);
       });
     })
+
+
+    this.GetModuleForAll()
+  }
+
+
+  GetModuleForAll() {
+    this.module.getArticleForActualily()
+      .pipe(first())
+        .subscribe((response:any) => {
+          console.log(response);
+          response.forEach((item:Modele) => {
+            this.modules.push(item)
+          });   
+        })
+
+        
   }
 
   signout() {
